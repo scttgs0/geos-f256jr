@@ -9,7 +9,7 @@ config_inc = 1
 ;------------------------
 ; use "make TARGET=<variant>" to build a specific variant
 
-.ifdef atari
+.if .defined(atari) || .defined(f256jr)
 	; make use of all reusable Wheels optimizations and fixes
 ;	wheels_size = 1
 ;	wheels_size_and_speed = 1
@@ -44,6 +44,9 @@ REUDskDrvSPC    =    $8300                      ; base for 4*DISK_DRV_LGH disk d
 .if .defined(atari)
 ;REUPresent = 1
 ;useRamExp = 1
+.elseif .defined(f256jr)
+REUPresent = 1
+useRamExp = 1
 .endif
 
 .endif
