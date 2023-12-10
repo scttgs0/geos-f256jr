@@ -173,6 +173,11 @@ DEPS += \
 	inc/atari.inc
 endif
 
+ifeq ($(VARIANT), f256jr)
+DEPS += \
+	inc/f256jr.inc
+endif
+
 KERNAL_OBJS=$(KERNAL_SOURCES:.s=.o)
 ALL_OBJS=$(KERNAL_OBJS)
 

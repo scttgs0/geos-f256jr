@@ -17,12 +17,9 @@
 ASSERT_IN_BANK0
 
 SerialNumber:
-.ifdef atari
-	.word $1CD5	; YTM's cracked GEOS
-.elseif .defined(f256jr)
+if .defined(f256jr)
 	.word $16B0
 .else
 	; This matches the serial in the cbmfiles.com GEOS64.D64
 	.word $58B5
 .endif
-
